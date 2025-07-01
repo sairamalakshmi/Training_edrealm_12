@@ -1,0 +1,16 @@
+#Remove duplicates from the unsorted List
+
+def remove_duplicates(arr):
+    d=set()
+    res=[]
+    for i in arr:
+        if i not in d:
+            d.add(i)
+            res.append(i)
+    return res
+
+arr=list(map(int,input("Enter array:").split()))
+result=remove_duplicates(arr)
+print("Array after removing duplicates:", result)
+# Example input: 1 2 3 2 1
+# Example output: Array after removing duplicates: [1, 2, 3]    

@@ -1,0 +1,15 @@
+# 2.First Negative Number
+def first_negative_number(arr, k):
+    i, j = 0, 0
+    while j<len(arr):
+      if (j-i+1)<k:
+        j+=1
+      elif (j-i+1)==k:
+        if arr[i]<0:
+          return arr[i]
+        i+=1
+        j+=1
+    return -1
+arr=[12,-1,-7,8,-15,30,16,28]
+k=3
+print(first_negative_number(arr, k))
