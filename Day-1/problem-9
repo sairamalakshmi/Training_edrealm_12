@@ -1,0 +1,45 @@
+# Problem 9: Reverse an array in Python
+#Method 1: Using a loop to reverse the array
+def reverse(arr):
+    n = len(arr)
+    for i in range(n // 2):
+        arr[i], arr[n - i - 1] = arr[n - i - 1], arr[i]
+    return arr
+n=input("Enter String or elements to reverse : ")
+arr = list(n)
+arr = reverse(arr)
+print("The reversed array is:", arr)
+
+#Method 2: Using Python's slicing feature to reverse the array
+def reverse(arr):
+    return arr[::-1]
+
+#Method 3: Using two pointers to reverse the array
+def reverse(arr):
+    start=0
+    end=len(arr)-1
+    while start < end:
+        arr[start], arr[end] = arr[end], arr[start]
+        start += 1
+        end -= 1
+
+
+
+
+## Problem : Check if a string is a palindrome
+def palindrome(arr):
+    start=0
+    end= len(arr)-1
+    while start < end:
+        if arr[start] != arr[end]:
+            return False
+        start += 1
+        end -= 1
+    if start >= end:
+        return True
+    return False
+arr=input("Enter String or elements: ")
+if palindrome(arr):
+    print("The string is a palindrome.")
+else:
+    print("The string is not a palindrome.")

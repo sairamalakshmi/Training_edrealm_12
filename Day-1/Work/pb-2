@@ -1,0 +1,22 @@
+#Given a number n and the position k ,count how many bits changed after setting the kth bit
+#This code counts the number of bits that change when setting the k-th bit of a number n to 1. 
+def count_after_set_bit(n,k):
+    a=n|(1<<k)
+    xor=n^a
+    count=0
+    while(xor>0):
+        if(xor&1==1):
+            count+=1
+        xor=xor>>1
+    return count
+n=int(input("Enter a number: "))
+k=int(input("Enter the position of the bit to set (0-indexed): "))
+result=count_after_set_bit(n,k)
+print("The number of changed bits after setting the", k, "th bit is:", result)
+
+
+# Brian Kernighan’s Algorithm:
+while(xor):
+        xor=xor&(xor-1)
+        count+=1
+    

@@ -1,0 +1,17 @@
+# Problem 5: Check if a number is a power of 2
+# This function checks if a given integer n is a power of 2 by counting the number of set bits (1s) in its binary representation.
+
+def power_of_square(n):
+    count=0
+    while(n):
+        count=count+n&1
+        n=n>>1
+    return count
+n=int(input("Enter a number: "))
+cnt=power_of_square(n)
+if(n<=0):
+    print("The number is not a power of 2")
+if(cnt==1):
+        print("The number is a power of 2")
+else:
+        print("The number is not a power of 2")

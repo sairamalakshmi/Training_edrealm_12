@@ -1,0 +1,10 @@
+#Given a number n and position k turn off the k-th bit(make it 0)
+
+def turn_off_kth_bit(n, k):
+    a=n & ~(1 << k)
+    return a
+
+n=int(input("Enter a number: "))  
+k=int(input("Enter the position of the bit to turn off: ")) 
+result = turn_off_kth_bit(n, k)
+print(result) 

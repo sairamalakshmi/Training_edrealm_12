@@ -1,0 +1,8 @@
+#Toggle the kth-bit of the number n
+def toggle_k_bit(n,k):
+    a=n^(1<<k)
+    return a    
+n=int(input("Enter a number: "))
+k=int(input("Enter the position of the bit to toggle (0-indexed): "))
+result=toggle_k_bit(n,k)
+print("The number after toggling the", k, "th bit is:", result)

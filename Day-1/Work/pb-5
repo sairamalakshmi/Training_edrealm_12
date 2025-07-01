@@ -1,0 +1,20 @@
+#Set all even positioned bits of a given number n
+
+#Method-1: Brute Force Approach
+def set_even_bits(n):
+    a = n
+    for i in range(0, 32, 2): 
+        a |= (1 << i)
+    return a
+n = int(input("Enter a number: "))
+result = set_even_bits(n)
+print("The number after setting all even positioned bits is:", result)
+
+
+#Method-2: Using Bitwise Operators
+def set_even_bits(n):
+    a = n | 0x55555555  
+    return a
+n=int(input("Enter a number: "))
+result = set_even_bits(n)   
+print("The number after setting all even positioned bits is:", result)

@@ -1,0 +1,10 @@
+# Problem 8: Find the non-duplicate element in an array where every other element appears twice.
+
+def non_duplicate(arr):
+    ans=0
+    for i in arr:
+        ans =ans ^i
+    return ans
+arr=[1,2,3,1,2]
+result=non_duplicate(arr)
+print("The non-duplicate element in the array is:", result)

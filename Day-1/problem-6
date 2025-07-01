@@ -1,0 +1,11 @@
+# Problem 6: Count the number of bits in a given integer
+# This function counts the number of bits in the binary representation of a given integer n.
+
+def no_of_bits(n):
+    count=0
+    while(n):
+        count=count+1
+        n=n>>1
+    return count
+n=int(input("Enter a number: "))
+print("Number of set bits in", n, "is", no_of_bits(n))

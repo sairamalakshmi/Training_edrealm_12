@@ -1,0 +1,22 @@
+#Bit-wise operators
+#&#This operator performs a bitwise AND operation between two integers.
+#/#This operator performs a bitwise OR operation between two integers.
+
+#Shift operators
+#>>#This operator performs a right shift operation on an integer, shifting its bits to the right by a specified number of positions.
+# Formula:n*2**k, where n is the original number and k is the number of positions to shift.        
+#<<#This operator performs a left shift operation on an integer, shifting its bits to the left by a specified number of positions.
+# Formula:n//2**k, where n is the original number and k is the number of positions to shift.
+
+
+## Problem 4: Count the number of set bits in a given integer
+#This function counts the number of set bits (1s) in the binary representation of a given integer n.
+
+def set_bits(n):
+    count=0
+    while(n):
+        count=count+n&1
+        n=n>>1
+    return count
+n=int(input("Enter a number: "))
+print("Number of set bits in", n, "is", set_bits(n))

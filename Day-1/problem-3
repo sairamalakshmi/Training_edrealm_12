@@ -1,0 +1,51 @@
+#Problem 3: Prime Number Check
+#This code checks if a number is prime using different methods
+
+
+# Method 1: Brute force method-O(n)
+n=int(input("Enter n value:"))
+cnt=0
+for i in range(2, n ):
+	if n % i == 0:
+		cnt += 1
+if cnt == 0:
+	print(n, "is a prime number")
+else:
+	print(n, "is not a prime number")
+
+# Method 2: Optimized brute force method-O(sqrt(n))
+n=int(input("Enter n value:"))
+cnt=0
+for i in range(2, n//2 + 1):
+	if n % i == 0:
+		cnt += 1
+if cnt == 0:
+	print(n, "is a prime number")
+else:
+	print(n, "is not a prime number")
+
+
+# Method 3: Optimized brute force method-O(sqrt(n))
+n=int(input("Enter n value:"))
+if n > 1:
+	for i in range(2, int(n**0.5) + 1):
+		if n % i == 0:
+			print(n, "is not a prime number")
+			break
+	else:
+		print(n, "is a prime number")
+else:
+	print(n, "is not a prime number")
+
+
+# Method 4: Optimized brute force method-O(sqrt(n/2))
+n=int(input("Enter n value:"))
+if n > 1:
+	for i in range(2, int(n**0.5/2) + 1):
+		if n % i == 0:
+			print(n, "is not a prime number")
+			break
+	else:
+		print(n, "is a prime number")
+else:
+	print(n, "is not a prime number")
