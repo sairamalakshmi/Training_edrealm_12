@@ -1,0 +1,9 @@
+#Recurssion
+
+#Write a progra to print sum of array Elements in Recurssion
+def fun(arr,n):
+  if n<0:
+    return 0
+  return arr[n]+fun(arr,n-1)
+arr=[1,2,3,4,5]
+print(fun(arr,len(arr)-1))

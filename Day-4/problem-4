@@ -1,0 +1,10 @@
+#Print all the Subsequences
+
+def sub(arr,idx,path):
+  if idx==len(arr):
+    return path
+  Include=sub(arr,idx+1,path+[arr[idx]]) #Include
+  Exlude=sub(arr,idx+1,path) #Exclude
+  return Include,Exlude
+arr=[1,2,3]
+print(sub(arr,0,[]))

@@ -1,0 +1,8 @@
+#Write a program to check the maximum number in the array
+
+def maxi(arr,n):
+  if n<0:
+    return 0
+  return max(arr[n],maxi(arr,n-1))
+arr=[12,45,67,83,25,4]
+print(maxi(arr,len(arr)-1))

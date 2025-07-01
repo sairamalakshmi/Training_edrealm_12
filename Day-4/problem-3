@@ -1,0 +1,17 @@
+#Binary Search using Recurssion
+
+def BS(arr,l,h,target,n):
+  m=l+(h-l)//2
+  if l>h:
+    return -1
+  if arr[m]==target:
+    return m
+  elif arr[m]>target:
+    return BS(arr,l,m-1,target,n-1)
+  else:
+    return BS(arr,m+1,h,target,n-1)
+arr=[1,3,5,7,9]
+l=0
+h=len(arr)-1
+target=5
+print(BS(arr,l,h,target,len(arr)))
