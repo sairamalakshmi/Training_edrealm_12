@@ -1,0 +1,14 @@
+#First Unique Character in a String LeetCode : Q 3005
+
+def firstUniqChar(s: str):
+    f = {}
+    for i in s:
+        f[i] = f.get(i, 0) + 1
+
+    for i in range(len(s)):
+        if f[s[i]] == 1:
+            return i
+    return -1
+print(firstUniqChar("leetcode"))
+print(firstUniqChar("loveleetcode"))
+print(firstUniqChar("aabb"))

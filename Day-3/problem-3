@@ -1,0 +1,23 @@
+#Frequency of the Array
+
+#Method-1:Using a dictionary to count frequencies
+def find_frequencies(arr):
+    frequency_dict = {}
+    for num in arr:
+        if num in frequency_dict:
+            frequency_dict[num] += 1
+        else:
+            frequency_dict[num] = 1
+    return frequency_dict
+arr = [1, 2, 2, 3, 3, 3]
+frequencies = find_frequencies(arr)
+print(frequencies)  # Output: {1: 1, 2: 2, 3: 3}
+
+#Method-2:Using collections.Counter for frequency counting
+from collections import Counter
+
+def find_frequencies_with_counter(arr):
+    return Counter(arr)
+arr = [1, 2, 2, 3, 3, 3]
+frequencies_counter = find_frequencies_with_counter(arr)
+print(frequencies_counter)  # Output: Counter({3: 3, 2: 2, 1: 1})

@@ -1,0 +1,13 @@
+#Shortest Job first
+
+def solve(bt):
+  n=len(bt)
+  bt.sort()
+  twt=0
+  wt=0
+  for i in range(1,n):
+    wt+=bt[i-1]
+    twt+=wt
+  return twt//n
+bt=[4,3,7,1,2]
+print(solve(bt))

@@ -1,0 +1,20 @@
+#N meetings in onr room
+
+#User function Template for python3
+
+class Solution:
+    
+    #Function to find the maximum number of meetings that can
+    #be performed in a meeting room.
+    def maximumMeetings(self,start,end):
+        # code here
+        z=list(zip(start,end))
+        z.sort(key=lambda x:x[1])
+        last_meeting=-1
+        count=0
+        for i,j in z:
+            if(last_meeting<i):
+                count+=1
+                last_meeting=j
+        return count
+            

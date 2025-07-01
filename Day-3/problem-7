@@ -1,0 +1,10 @@
+#First Letter to Appear Twice (LeetCode:2351)
+
+def repeatedCharacter(s):
+  c={}
+  for i in s:
+    c[i]=c.get(i,0)+1
+    if c[i]==2:
+      return i
+s='aaddbgyjgkgelgsutbrhbgyu'
+print(repeatedCharacter(s))

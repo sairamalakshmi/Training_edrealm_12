@@ -1,0 +1,17 @@
+#Greedy Approach
+
+#Assign Cookies
+
+def findContentChildren(g,s):
+  g.sort()
+  s.sort()
+  a,b,c=0,0,0
+  while(a<len(g) and b<len(s)):
+    if s[b]>=g[a]:
+      c+=1
+      a+=1
+    b+=1
+  return c
+g=[1,2]
+s=[1,2,3]
+print(findContentChildren(g,s))

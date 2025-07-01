@@ -1,0 +1,17 @@
+#Koko Eating Bananas LeetCode: Q875
+
+from math import ceil
+
+def minEatingSpeed(piles, h):
+    l, r = 1, max(piles)
+    while l <= r:
+        m = (l + r) // 2
+        tot = sum(ceil(i / m) for i in piles)
+        if tot > h:
+            l = m + 1
+        else:
+            r = m - 1
+    return l
+piles=[3,6,7,11]
+h=8
+print(minEatingSpeed(piles, h))

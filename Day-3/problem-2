@@ -1,0 +1,21 @@
+#Hashing
+
+#Maximum Occurance of a string
+#Method-1: Using dictionary to count occurrences
+def max_occurrence(s):
+    count = {}
+    for char in s:
+        if char in count:
+            count[char] += 1
+        else:
+            count[char] = 1
+    max_char = max(count, key=count.get)
+    return max_char, count[max_char]
+
+#Method-2: Using collections.Counter
+from collections import Counter 
+def max_occurrence_counter(s):
+    count = Counter(s)
+    max_char, max_count = count.most_common(1)[0]
+    return max_char, max_count
+

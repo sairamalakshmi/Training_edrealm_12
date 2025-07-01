@@ -1,0 +1,14 @@
+#Count Elements With Maximum Frequency LeetCode : Q 3005
+
+def maxFrequencyElements(nums):
+    c = {}
+    for i in nums:
+        c[i] = c.get(i, 0) + 1
+    l = list(c.values())
+    maxx = max(l)
+    res = 0
+    for i in range(len(l)):
+        if l[i] == maxx:
+            res += l[i]
+    return res
+print(maxFrequencyElements([1, 1, 2, 2, 4, 5]))
