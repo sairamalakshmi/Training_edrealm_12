@@ -1,0 +1,18 @@
+#binary search in 2d matrix-2:leetcode:240
+
+class Solution:
+    def searchMatrix(self, matrix: List[List[int]], target: int) -> bool:
+        n=len(matrix)
+        m=len(matrix[0])
+        row=0
+        col=m-1
+        while(row<n and col>=0):
+            mid=(row+col)//2
+            if(matrix[row][col]==target):
+                return True
+            elif(matrix[row][col]<target):
+                row+=1
+            else:
+                col-=1
+        return False
+

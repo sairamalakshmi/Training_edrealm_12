@@ -1,0 +1,41 @@
+#2)Write a code to find minimum in the range
+def build(arr,tree,node,start,end):
+    if start==end:
+        tree[node]=arr[start]
+    else:
+        mid=(start+end)//2
+        build(arr,tree,2*node+1,start,mid)
+        build(arr,tree,2*node+2,mid+1,end)
+        tree[node]=min(tree[2*node+1],tree[2*node+2])
+def query(tree,node,start,end,l,r):
+    if r<start or end<l:
+        return 0
+    if l<=start and end<=end:
+        return tree[node]
+    mid=(start+end)//2
+    left_min=query(tree,2*node+1,start,mid,l,r)
+    right_min=query(tree,2*node+2,mid+1,end,l,r)
+    return min(left_min,right_min)
+def update(arr,tree,node,start,end,idx,val):
+    if start==end:
+        arr[idx]=val
+        tree[node]=val
+    else:
+        mid=(start+end)//2
+        if(idx<=mid):
+            update(arr,tree,2*node+1,start,mid,idx,val)
+        else:
+            update(arr,tree,2*node+2,mid+1,end,idx,val)
+        tree[node]=min(tree[2*node+1],tree[2*node+2])
+       
+arr=list(map(int,input("Enter array:").split()))
+n=len(arr)
+tree=[0]*(4*n)
+build(arr,tree,0,0,n-1)
+print("Segment tree:",tree)
+l,r=map(int,input("Enter l and r values:").split())
+a=query(tree,0,0,n-1,l,r)
+print("Total:",a)
+i,v=map(int,input("Enter i and v values:").split())
+update(arr,tree,0,0,n-1,i,v)
+print("Updated Array:",tree)
