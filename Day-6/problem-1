@@ -1,0 +1,12 @@
+#Jump Game 2-ltcode:45
+class Solution:
+    def jump(self, nums: List[int]) -> int:
+        currend=0
+        cnt=0
+        longsum=0
+        for i in range(len(nums)-1):
+            longsum=max(longsum,i+nums[i])
+            if i==currend:
+                cnt+=1
+                currend=longsum
+        return cnt
