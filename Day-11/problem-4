@@ -1,0 +1,22 @@
+#Course schedule:lt:207
+
+from collections import deque
+class Solution:
+    def canFinish(self, numCourses: int, prerequisites: List[List[int]]) -> bool:
+        graph=defaultdict(list)
+        deg=[0]*numCourses
+        for course,prereq in prerequisites:
+            graph[prereq].append(course)
+            deg[course]+=1
+        queue=deque([i for i in range(numCourses) if deg[i]==0])
+        vis=0
+        order=[]
+
+        while queue:
+            node=queue.popleft()
+            vis+=1
+            for neighbor in graph[node]:
+                deg[neighbor]-=1
+                if deg[neighbor]==0:
+                    queue.append(neighbor) 
+        return vis==numCourses
