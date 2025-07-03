@@ -1,0 +1,18 @@
+#Nxt greater element:lt-496
+
+class Solution:
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        stack=[]
+        nxt_greater={}
+        for i in nums2:
+            while stack and i>stack[-1]:
+                smaller=stack.pop()
+                nxt_greater[smaller]=i
+            stack.append(i)
+        while stack:
+            nxt_greater[stack.pop()]=-1
+        result=[]
+        for i in nums1:
+            result.append(nxt_greater[i])
+        return result        
+
